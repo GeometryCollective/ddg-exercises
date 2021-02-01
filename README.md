@@ -1,6 +1,6 @@
 # ddg-exercises
 
-C++ assignment skeleton for course on Discrete Differential Geometry (15-458/858)
+C++ assignment skeleton for course on [Discrete Differential Geometry](http://geometry.cs.cmu.edu/ddg) (15-458/858)
 
 For the JavaScript version, see <https://github.com/cmu-geometry/ddg-exercises-js>
 
