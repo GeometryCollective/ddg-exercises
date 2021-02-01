@@ -30,7 +30,7 @@ polyscope::SurfaceGraphQuantity* currVert; // currently active vertex
 double vertexRadius;
 polyscope::SurfaceVectorQuantity* directionField;
 
-size_t EULER_CHARACTERISTIC;
+int EULER_CHARACTERISTIC;
 double lengthScale;
 
 
@@ -137,7 +137,7 @@ void redraw() {
  */
 void functionCallback() {
 
-    ImGui::Text("Euler characteristic: %zu", EULER_CHARACTERISTIC);
+    ImGui::Text("Euler characteristic: %d", EULER_CHARACTERISTIC);
     ImGui::Text("Sum of singularity indices: %0.2f", RHO.sum());
     ImGui::Text("");
 
@@ -197,10 +197,6 @@ int main(int argc, char** argv) {
 
     if (mesh->nBoundaryLoops() > 0) {
         std::cerr << "Please load a mesh without boundary." << std::endl;
-        return EXIT_FAILURE;
-    }
-    if (EULER_CHARACTERISTIC > 2) {
-        std::cerr << "Please load a mesh with genus 0." << std::endl;
         return EXIT_FAILURE;
     }
 

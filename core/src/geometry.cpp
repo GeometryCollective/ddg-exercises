@@ -38,8 +38,8 @@ namespace surface {
 /*
  * Compute the Euler characteristic of the mesh.
  */
-size_t VertexPositionGeometry::eulerCharacteristic() const {
-    return mesh.nVertices() - mesh.nEdges() + mesh.nFaces();
+int VertexPositionGeometry::eulerCharacteristic() const {
+    return (int)mesh.nVertices() - (int)mesh.nEdges() + (int)mesh.nFaces();
 }
 
 /*
