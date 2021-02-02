@@ -19,7 +19,7 @@ cd ddg-exercises/projects
 ```
 
 Each project in `ddg-exercises/projects` builds its own executable when compiled. To 
-run a particular project `<project>`, go to the `projects/<project>` directory. First, compile using
+run a particular project `<project>`, go to the `projects/<project>` directory. The basic process for compiling is as follows. First, compile using
 ```
 mkdir build
 cd build
@@ -30,6 +30,8 @@ which builds an executable `main` which can then be run using
 ```
 bin/main <optional_path_to_a_mesh>
 ```
+
+(See https://geometry-central.net/build/building/ for additional compiler flag options.)
 
 ## Dependencies (all included)
 

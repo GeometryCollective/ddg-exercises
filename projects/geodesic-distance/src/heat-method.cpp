@@ -14,8 +14,8 @@ HeatMethod::HeatMethod(ManifoldSurfaceMesh* surfaceMesh, VertexPositionGeometry*
 
     // TODO: Build Laplace and flow matrices.
     // Note: core/geometry.cpp has meanEdgeLength() function
-    this->A = identityMatrix<double>(mesh->nVertices()); // placeholder
-    this->F = identityMatrix<double>(mesh->nVertices()); // placeholder
+    this->A = identityMatrix<double>(1); // placeholder
+    this->F = identityMatrix<double>(1); // placeholder
 }
 
 /*
@@ -40,7 +40,7 @@ FaceData<Vector3> HeatMethod::computeVectorField(const Vector<double>& u) const 
 Vector<double> HeatMethod::computeDivergence(const FaceData<Vector3>& X) const {
 
     // TODO
-    return Vector<double>::Zero(mesh->nVertices()); // placeholder
+    return Vector<double>::Zero(1); // placeholder
 }
 
 /*

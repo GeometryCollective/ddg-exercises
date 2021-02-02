@@ -20,7 +20,7 @@ MeanCurvatureFlow::MeanCurvatureFlow(ManifoldSurfaceMesh* inputMesh, VertexPosit
 SparseMatrix<double> MeanCurvatureFlow::buildFlowOperator(const SparseMatrix<double>& M, double h) const {
 
     // TODO
-    return identityMatrix<double>(mesh->nVertices()); // placeholder
+    return identityMatrix<double>(1); // placeholder
 }
 
 /*

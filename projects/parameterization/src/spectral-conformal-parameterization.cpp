@@ -20,7 +20,7 @@ SpectralConformalParameterization::SpectralConformalParameterization(ManifoldSur
 SparseMatrix<std::complex<double>> SpectralConformalParameterization::buildConformalEnergy() const {
 
     // TODO
-    return identityMatrix<std::complex<double>>(mesh->nVertices()); // placeholder
+    return identityMatrix<std::complex<double>>(1); // placeholder
 }
 
 

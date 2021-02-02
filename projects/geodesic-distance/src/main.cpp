@@ -167,6 +167,7 @@ void functionCallback() {
     }
     if (ImGui::Button("Reset")) {
         polyscope::state::subset.vertices.clear();
+        polyscope::state::currVertexIndex = -1;
         psMesh->setSurfaceColor({1.0, 0.45, 0.0});
         solnColors->setEnabled(false);
         isolines->setEnabled(false);

@@ -11,7 +11,7 @@ ModifiedMeanCurvatureFlow::ModifiedMeanCurvatureFlow(ManifoldSurfaceMesh* inputM
     geometry = inputGeo;
 
     // TODO: build the Laplace matrix
-    this->A = identityMatrix<double>(mesh->nVertices()); // placeholder
+    this->A = identityMatrix<double>(1); // placeholder
 }
 
 /*
@@ -22,5 +22,5 @@ ModifiedMeanCurvatureFlow::ModifiedMeanCurvatureFlow(ManifoldSurfaceMesh* inputM
  */
 SparseMatrix<double> ModifiedMeanCurvatureFlow::buildFlowOperator(const SparseMatrix<double>& M, double h) const {
     // TODO
-    return identityMatrix<double>(mesh->nVertices()); // placeholder
+    return identityMatrix<double>(1); // placeholder
 }
