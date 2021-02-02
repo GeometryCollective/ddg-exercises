@@ -25,5 +25,6 @@ ScalarPoissonProblem::ScalarPoissonProblem(ManifoldSurfaceMesh* inputMesh, Verte
 Vector<double> ScalarPoissonProblem::solve(const Vector<double>& rho) const {
 
     // TODO
+    // Note: Geometry Central has linear solvers: https://geometry-central.net/numerical/linear_solvers/
     return Vector<double>::Zero(rho.rows()); // placeholder
 }

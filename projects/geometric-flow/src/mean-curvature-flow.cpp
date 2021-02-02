@@ -32,7 +32,7 @@ SparseMatrix<double> MeanCurvatureFlow::buildFlowOperator(const SparseMatrix<dou
 void MeanCurvatureFlow::integrate(double h) {
 
     // TODO
-    // Note: See Eigen documentation: https://eigen.tuxfamily.org/dox/group__TopicSparseSystems.html
+    // Note: Geometry Central has linear solvers: https://geometry-central.net/numerical/linear_solvers/
     // Note: Update positions via geometry->inputVertexPositions
     for (Vertex v : mesh->vertices()) {
         geometry->inputVertexPositions[v] = geometry->inputVertexPositions[v]; // placeholder

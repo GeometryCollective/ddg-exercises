@@ -52,7 +52,6 @@ Vector<double> HodgeDecomposition::computeExactComponent(const Vector<double>& o
 Vector<double> HodgeDecomposition::computeCoExactComponent(const Vector<double>& omega) const {
 
     // TODO
-    // Note: See Eigen::SparseLU for solving system.
     return Vector<double>::Zero(1); // placeholder
 }
 
