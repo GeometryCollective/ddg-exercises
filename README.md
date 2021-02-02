@@ -2,7 +2,7 @@
 
 This repo contains C++ skeleton code for course assignments from [Discrete Differential Geometry](https://brickisland.net/DDGSpring2020/) (15-458/858). 
 
-For the JavaScript veresion, see https://github.com/cmu-geometry/ddg-exercises-js.
+For the JavaScript version, see https://github.com/cmu-geometry/ddg-exercises-js.
 
 This code framework uses [Geometry Central](https://github.com/nmwsharp/geometry-central) for geometry processing utilities and [Polyscope](https://github.com/nmwsharp/polyscope) for visualization, which were developed by Nick Sharp and others in the [Geometry Collective](http://geometry.cs.cmu.edu/). Extensive documentation for these libraries ---_and how to build them on various platforms_--- can be found at the preceding links.  If you're having trouble building, please make sure to take a look before bugging the TAs! :-)  (We are of course still very happy to help if you're still having trouble.)
 
