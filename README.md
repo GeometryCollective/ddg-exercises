@@ -19,19 +19,19 @@ cd ddg-exercises/projects
 ```
 
 Each project in `ddg-exercises/projects` builds its own executable when compiled. To 
-run a particular project `<project>`, go to the `projects/<project>` directory. The basic process for compiling is as follows. First, compile using
+run a particular project `<project>`, go to the `projects/<project>` directory. The basic process for compiling is as follows. First, make a `build` directory and compile using
 ```
 mkdir build
 cd build
 cmake ..
 make
 ```
-which builds an executable `main` which can then be run using
+This builds an executable `main` which can then be run using
 ```
 bin/main <optional_path_to_a_mesh>
 ```
 
-(See https://geometry-central.net/build/building/ for additional compiler flag options.)
+(See [Geometry Central: Building](https://geometry-central.net/build/building/) for additional compiler flag options.
 
 ## Dependencies (all included)
 
@@ -47,6 +47,12 @@ bin/main <optional_path_to_a_mesh>
 Nicole Feng
 
 Email: nfeng@cs.cmu.edu
+
+Rohan Sawhney (original JavaScript version)
+
+Email: rohansawhney@cs.cmu.edu
+
+This code is directly based off Rohan's original JavaScript framework, [ddg-exercises-js](https://github.com/cmu-geometry/ddg-exercises-js).
 
 ## License
 
