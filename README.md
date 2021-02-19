@@ -45,11 +45,9 @@ bin/main <optional_path_to_a_mesh>
 ## Author
 
 Nicole Feng
-
 Email: nfeng@cs.cmu.edu
 
 Rohan Sawhney (original JavaScript version)
-
 Email: rohansawhney@cs.cmu.edu
 
 This code is directly based off Rohan's original JavaScript framework, [ddg-exercises-js](https://github.com/cmu-geometry/ddg-exercises-js).

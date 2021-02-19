@@ -13,12 +13,19 @@ using namespace geometrycentral::surface;
  */
 void SimplicialComplexOperators::assignElementIndices() {
 
-    // You can set the index field of a vertex via geometry->vertexIndices[v], where v is a Vertex object. Similarly you
-    // can do edges and faces via geometry->edgeIndices, geometry->faceIndices, like so:
+    // You can set the index field of a vertex via geometry->vertexIndices[v], where v is a Vertex object (or an
+    // integer). Similarly you can do edges and faces via geometry->edgeIndices, geometry->faceIndices, like so:
 
     for (size_t i = 0; i < mesh->nVertices(); i++) {
         geometry->vertexIndices[i] = i;
     }
+
+    // // This is also valid:
+    // size_t idx = 0;
+    // for (Vertex v : mesh->vertices()) {
+    //     geometry->vertexIndices[v] = idx;
+    //     idx++;
+    // }
 
     for (size_t i = 0; i < mesh->nEdges(); i++) {
         geometry->edgeIndices[i] = i;
