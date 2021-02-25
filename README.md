@@ -12,7 +12,7 @@ Documentation for Polyscope can be found here [here](https://polyscope.run/).
 
 ## Getting started
 
-Clone the repository and its submodules.
+1. Clone the repository and its submodules.
 ```
 git clone --recursive https://github.com/GeometryCollective/ddg-exercises
 cd ddg-exercises/projects
@@ -32,6 +32,19 @@ bin/main <optional_path_to_a_mesh>
 ```
 
 (See [Geometry Central: Building](https://geometry-central.net/build/building/) for additional compiler flag options.
+
+2. If you would like to add your own remote repository, 
+```
+git remote add origin <url_of_remote_repository>
+```
+or change the url of an existing remote repo named 'origin' via
+```
+git remote set-url origin <new_url>
+```
+Then you should be able to push your commits to your remote repo. (For more extensive documentation to fit your needs, see [git-remote documentation](https://git-scm.com/docs/git-remote).)
+
+**Please make your repo(s) private** to protect academic integrity! As mentioned by the course grading policy, "Duplicate work turned in by two different students will be considered cheating by _both_ students" -- meaning if another student copies your code off your public repo, you will _both_ get zeros for the course :((.
+
 
 ## Dependencies (all included)
 
