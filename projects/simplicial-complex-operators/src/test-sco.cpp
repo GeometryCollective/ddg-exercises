@@ -28,6 +28,11 @@ class SimplicialComplexOperatorsTest : public ::testing::Test {
         ManifoldSurfaceMesh* mesh = mesh_uptr.release();
         VertexPositionGeometry* geometry = geometry_uptr.release();
         SCO.initialize(mesh, geometry);
+
+        // In case students are accessing using cached arrays.
+        geometry->requireVertexIndices();
+        geometry->requireEdgeIndices();
+        geometry->requireFaceIndices();
     }
 
     virtual ~SimplicialComplexOperatorsTest() {}

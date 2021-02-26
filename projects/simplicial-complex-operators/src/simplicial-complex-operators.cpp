@@ -13,6 +13,12 @@ using namespace geometrycentral::surface;
  */
 void SimplicialComplexOperators::assignElementIndices() {
 
+    // Needed to access geometry->vertexIndices, etc. as cached quantities.
+    // Not needed if you're just using v->getIndex(), etc.
+    geometry->requireVertexIndices();
+    geometry->requireEdgeIndices();
+    geometry->requireFaceIndices();
+
     // You can set the index field of a vertex via geometry->vertexIndices[v], where v is a Vertex object (or an
     // integer). Similarly you can do edges and faces via geometry->edgeIndices, geometry->faceIndices, like so:
 
@@ -20,12 +26,12 @@ void SimplicialComplexOperators::assignElementIndices() {
         geometry->vertexIndices[i] = i;
     }
 
-    // // This is also valid:
-    // size_t idx = 0;
-    // for (Vertex v : mesh->vertices()) {
-    //     geometry->vertexIndices[v] = idx;
-    //     idx++;
-    // }
+    // This is also a valid way to access indices (directly by mesh element).
+    size_t idx = 0;
+    for (Vertex v : mesh->vertices()) {
+        geometry->vertexIndices[v] = idx;
+        idx++;
+    }
 
     for (size_t i = 0; i < mesh->nEdges(); i++) {
         geometry->edgeIndices[i] = i;
@@ -37,6 +43,16 @@ void SimplicialComplexOperators::assignElementIndices() {
 
     // Geometry Central already sets the indices for us, though, so this function is just here for demonstration.
     // You don't have to do anything :)
+
+    // You can more easily get the indices of mesh elements using the function getIndex(), like so:
+    //
+    //      v.getIndex()
+    //
+    // where v can be a Vertex, Edge, Face, Halfedge, etc. For example:
+
+    for (Vertex v : mesh->vertices()) {
+        idx = v.getIndex(); // == geometry->vertexIndices[v])
+    }
 }
 
 /*

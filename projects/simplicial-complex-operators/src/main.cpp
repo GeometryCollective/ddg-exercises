@@ -200,11 +200,6 @@ int main(int argc, char** argv) {
     psMesh = polyscope::registerSurfaceMesh(MESHNAME, geometry->inputVertexPositions, mesh->getFaceVertexList(),
                                             polyscopePermutations(*mesh));
 
-    // Needed to access geometry->vertexIndices, etc.
-    geometry->requireVertexIndices();
-    geometry->requireEdgeIndices();
-    geometry->requireFaceIndices();
-
     // Mesh initialization
     SCO.initialize(mesh, geometry);
 

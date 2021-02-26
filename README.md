@@ -48,7 +48,7 @@ Then you should be able to push your commits to your remote repo. (For more exte
 
 ## Dependencies (all included)
 
-1. Geometry processing and linear algebra - [Geometry Central](https://github.com/nmwsharp/geometry-central), which in turn has dependencies on [Eigen](https://eigen.tuxfamily.org) and [Suitesparse](https://people.engr.tamu.edu/davis/suitesparse.html).
+1. Geometry processing and linear algebra - [Geometry Central](https://github.com/nmwsharp/geometry-central), which in turn has dependencies on [Eigen](https://eigen.tuxfamily.org) and/or [Suitesparse](https://people.engr.tamu.edu/davis/suitesparse.html).
 
 2. Visualization - [Polyscope](https://github.com/nmwsharp/polyscope)
 
