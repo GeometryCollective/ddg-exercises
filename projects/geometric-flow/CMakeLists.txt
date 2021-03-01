@@ -80,6 +80,7 @@ add_subdirectory(../../deps/googletest deps/googletest)
 
 # Change the executable name by changing "main" in the lines below.
 add_executable(main "${SRCS}")
+set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT main)
 target_include_directories(main PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include/")
 target_include_directories(main PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/../../utils/include")
 target_link_libraries(main geometry-central polyscope)
