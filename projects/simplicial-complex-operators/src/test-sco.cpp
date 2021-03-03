@@ -30,9 +30,9 @@ class SimplicialComplexOperatorsTest : public ::testing::Test {
         SCO.initialize(mesh, geometry);
 
         // In case students are accessing using cached arrays.
-        geometry->requireVertexIndices();
-        geometry->requireEdgeIndices();
-        geometry->requireFaceIndices();
+        SCO.geometry->requireVertexIndices();
+        SCO.geometry->requireEdgeIndices();
+        SCO.geometry->requireFaceIndices();
     }
 
     virtual ~SimplicialComplexOperatorsTest() {}
