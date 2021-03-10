@@ -334,7 +334,7 @@ Vector<double> generateRandomFormOnEdges() {
     Vector<double> vectorPotential = generateRandomFormOnVertices();
 
     std::vector<Vector3> field;
-    field.reserve(mesh->nFaces());
+    field.resize(mesh->nFaces());
     for (Face f : mesh->faces()) {
         field[f.getIndex()] = {0, 0, 0};
         double A = geometry->faceArea(f);

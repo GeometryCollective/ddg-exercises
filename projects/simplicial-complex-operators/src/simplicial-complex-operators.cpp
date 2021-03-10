@@ -41,8 +41,6 @@ void SimplicialComplexOperators::assignElementIndices() {
         geometry->faceIndices[i] = i;
     }
 
-    // Geometry Central already sets the indices for us, though, so this function is just here for demonstration.
-    // You don't have to do anything :)
 
     // You can more easily get the indices of mesh elements using the function getIndex(), like so:
     //
@@ -53,6 +51,9 @@ void SimplicialComplexOperators::assignElementIndices() {
     for (Vertex v : mesh->vertices()) {
         idx = v.getIndex(); // == geometry->vertexIndices[v])
     }
+
+    // Geometry Central already sets the indices for us, though, so this function is just here for demonstration.
+    // You don't have to do anything :)
 }
 
 /*
