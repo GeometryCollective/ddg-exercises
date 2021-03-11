@@ -74,7 +74,7 @@ SparseMatrix<double> VertexPositionGeometry::buildHodgeStar2Form() const {
  * Build exterior derivative on 0-forms.
  *
  * Input:
- * Returns: A sparse diagonal matrix representing the exterior derivative that can be applied to discrete 0-forms.
+ * Returns: A sparse matrix representing the exterior derivative that can be applied to discrete 0-forms.
  */
 SparseMatrix<double> VertexPositionGeometry::buildExteriorDerivative0Form() const {
 
@@ -86,7 +86,7 @@ SparseMatrix<double> VertexPositionGeometry::buildExteriorDerivative0Form() cons
  * Build exterior derivative on 1-forms.
  *
  * Input:
- * Returns: A sparse diagonal matrix representing the exterior derivative that can be applied to discrete 1-forms.
+ * Returns: A sparse matrix representing the exterior derivative that can be applied to discrete 1-forms.
  */
 SparseMatrix<double> VertexPositionGeometry::buildExteriorDerivative1Form() const {
 
