@@ -185,7 +185,7 @@ void functionCallback() {
 
     ImGui::Text("Normals:");
 
-    for (size_t i = 0; i < nVectors.size(); i++) {
+    for (size_t i = 0; i < nNames.size(); i++) {
         ImGui::PushStyleColor(ImGuiCol_Button, *nState[i]);
         ImGui::PushStyleColor(ImGuiCol_ButtonActive, *nState[i]);
         ImGui::PushStyleColor(ImGuiCol_ButtonHovered, *nState[i]);
@@ -201,7 +201,7 @@ void functionCallback() {
             }
         }
         ImGui::PopStyleColor(3);
-        if (i % 3 != 2) {
+        if (i % 3 != 2 && i != nNames.size() - 1) {
             ImGui::SameLine();
         }
     }

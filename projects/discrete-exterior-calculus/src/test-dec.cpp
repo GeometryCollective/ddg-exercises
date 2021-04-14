@@ -181,6 +181,7 @@ TEST_F(DiscreteExteriorCalculusTest, buildExteriorDerivative0Form) {
 
     std::cerr << "Testing buildExteriorDerivative0Form()..." << std::endl;
     Vector<double> result = D0 * phi;
+    // Allow for either choice of edge orientation.
     EXPECT_TRUE((result - dPhi_soln).norm() < 1e-6 || (result + dPhi_soln).norm() < 1e-6);
 }
 
@@ -188,6 +189,7 @@ TEST_F(DiscreteExteriorCalculusTest, buildExteriorDerivative1Form) {
 
     std::cerr << "Testing buildExteriorDerivative1Form()..." << std::endl;
     Vector<double> result = D1 * omega;
+    // Allow for either choice of edge orientation.
     EXPECT_TRUE((result - dOmega_soln).norm() < 1e-6 || (result + dOmega_soln).norm() < 1e-6);
 }
 
