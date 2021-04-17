@@ -73,7 +73,7 @@ double VertexPositionGeometry::totalArea() const {
 }
 
 /*
- * Computes the cotangent of the angle opposite to a halfedge.
+ * Computes the cotangent of the angle opposite to a halfedge. (Do NOT use built-in function for this)
  *
  * Input: The halfedge whose cotan weight is to be computed.
  * Returns: The cotan of the angle opposite the given halfedge.
@@ -97,7 +97,7 @@ double VertexPositionGeometry::barycentricDualArea(Vertex v) const {
 }
 
 /*
- * Computes the angle (in radians) at a given corner.
+ * Computes the angle (in radians) at a given corner. (Do NOT use built-in function for this)
  *
  *
  * Input: The corner at which the angle needs to be computed.
