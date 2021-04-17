@@ -110,7 +110,7 @@ double VertexPositionGeometry::angle(Corner c) const {
 }
 
 /*
- * Computes the signed angle (in radians) between two adjacent faces.
+ * Computes the signed angle (in radians) between two adjacent faces. (Do NOT use built-in function for this)
  *
  * Input: The halfedge (shared by the two adjacent faces) on which the dihedral angle is computed.
  * Returns: The dihedral angle.
