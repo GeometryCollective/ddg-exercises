@@ -149,7 +149,7 @@ void functionCallback() {
         polyscope::state::subset.vertices.clear();
         polyscope::state::currVertexIndex = -1;
         RHO = Vector<double>::Zero(mesh->nVertices());
-        psMesh->setSurfaceColor({1.0, 0.45, 0.0});
+        psMesh->setSurfaceColor({1.0, 1.0, 1.0});
         solnColors->setEnabled(false);
         redraw();
     }
@@ -205,7 +205,7 @@ int main(int argc, char** argv) {
     flipZ();
     vertexRadius = geometry->meanEdgeLength() * 0.2;
     psMesh->setSmoothShade(true);
-    psMesh->setSurfaceColor({1.0, 0.45, 0.0});
+    psMesh->setSurfaceColor({1.0, 1.0, 1.0});
     // initialize to something
     currVert =
         psMesh->addSurfaceGraphQuantity("current vertex", std::vector<Vector3>(), std::vector<std::array<size_t, 2>>());
