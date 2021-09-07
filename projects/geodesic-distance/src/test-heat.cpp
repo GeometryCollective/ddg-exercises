@@ -107,7 +107,7 @@ class HeatMethodTest : public ::testing::Test {
             phi_soln[i] = phi[i];
         }
         for (size_t i = 0; i < HM.mesh->nFaces(); i++) {
-            X_soln[mesh->face(i)] = X[i];
+            X_soln[HM.mesh->face(i)] = X[i];
         }
     }
 

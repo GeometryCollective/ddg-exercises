@@ -4,7 +4,7 @@ This directory contains skeleton code for "Assignment 0: Combinatorial Surfaces"
 mkdir build
 cd build
 cmake ..
-make
+make -j4
 bin/main ../../../input/<mesh_file>
 ```
 

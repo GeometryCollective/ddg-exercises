@@ -21,28 +21,21 @@ void SimplicialComplexOperators::assignElementIndices() {
 
     // You can set the index field of a vertex via geometry->vertexIndices[v], where v is a Vertex object (or an
     // integer). Similarly you can do edges and faces via geometry->edgeIndices, geometry->faceIndices, like so:
-
-    for (size_t i = 0; i < mesh->nVertices(); i++) {
-        geometry->vertexIndices[i] = i;
-    }
-
-    // This is also a valid way to access indices (directly by mesh element).
     size_t idx = 0;
     for (Vertex v : mesh->vertices()) {
-        geometry->vertexIndices[v] = idx;
-        idx++;
+        idx = geometry->vertexIndices[v];
     }
 
-    for (size_t i = 0; i < mesh->nEdges(); i++) {
-        geometry->edgeIndices[i] = i;
+    for (Edge e : mesh->edges()) {
+        idx = geometry->edgeIndices[e];
     }
 
-    for (size_t i = 0; i < mesh->nFaces(); i++) {
-        geometry->faceIndices[i] = i;
+    for (Face f : mesh->faces()) {
+        idx = geometry->faceIndices[f];
     }
 
-
-    // You can more easily get the indices of mesh elements using the function getIndex(), like so:
+    // You can more easily get the indices of mesh elements using the function getIndex(), albeit less efficiently and
+    // technically less safe (although you don't need to worry about it), like so:
     //
     //      v.getIndex()
     //
