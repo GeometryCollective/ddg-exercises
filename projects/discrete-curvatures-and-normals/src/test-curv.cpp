@@ -294,7 +294,7 @@ TEST_F(DiscreteCurvaturesAndNormalsTest, principalCurvatures) {
             allKMinCorrect = false;
         }
         if (abs(k2 - k2_soln) > 1e-5) {
-            allKMinCorrect = false;
+            allKMaxCorrect = false;
         }
         if (!allKMinCorrect && !allKMaxCorrect) {
             break;
