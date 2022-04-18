@@ -1,6 +1,7 @@
 [submodule "deps/geometry-central"]
 	path = deps/geometry-central
 	url = https://github.com/nzfeng/geometry-central.git
+	branch = DDG
 [submodule "deps/polyscope"]
 	path = deps/polyscope
 	url = https://github.com/nzfeng/polyscope.git
