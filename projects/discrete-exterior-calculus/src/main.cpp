@@ -55,6 +55,13 @@ std::map<int, std::string> formNameMap = {{PRIMAL_0_FORM, "Primal 0-form"}, {PRI
                                           {PRIMAL_2_FORM, "Primal 2-form"}, {DUAL_0_FORM, "Dual 0-form"},
                                           {DUAL_1_FORM, "Dual 1-form"},     {DUAL_2_FORM, "Dual 2-form"}};
 
+struct DiagramImage {
+    int width = 0, height = 0;
+    GLuint texture = 0;
+};
+
+DiagramImage diagramImages[6] = {};
+
 int currentFormName = PRIMAL_0_FORM;
 std::map<Halfedge, size_t> heMap; // maps primal exterior halfedges to dual vertex indices
 std::map<Vertex, size_t> vMap;    // maps primal boundary vertices to dual vertex indices
@@ -231,34 +238,19 @@ bool LoadTextureFromFile(const char* filename, GLuint* out_texture, int* out_wid
  * Display the operator diagram.
  */
 void showDiagram() {
-    int image_width = 0;
-    int image_height = 0;
-    GLuint image_texture = 0;
-    std::string filename = "../../../imgs/dec1.png";
-    switch (currentFormName) {
-    case PRIMAL_1_FORM:
-        filename = "../../../imgs/dec2.png";
-        break;
-    case PRIMAL_2_FORM:
-        filename = "../../../imgs/dec3.png";
-        break;
-    case DUAL_0_FORM:
-        filename = "../../../imgs/dec4.png";
-        break;
-    case DUAL_1_FORM:
-        filename = "../../../imgs/dec5.png";
-        break;
-    case DUAL_2_FORM:
-        filename = "../../../imgs/dec6.png";
-        break;
+    DiagramImage& image = diagramImages[currentFormName];
+
+    if (image.texture == 0) {
+        char filename[256];
+        snprintf(filename, sizeof(filename), "../../../imgs/dec%d.png", currentFormName + 1);
+        bool ret = LoadTextureFromFile(filename, &image.texture, &image.width, &image.height);
+        IM_ASSERT(ret);
     }
-    bool ret = LoadTextureFromFile(filename.c_str(), &image_texture, &image_width, &image_height);
-    IM_ASSERT(ret);
 
     // inside function callback, ImGui::GetWindowSize() gets size of callback window
     float width = ImGui::GetWindowWidth();
     float imgwidth = width * 0.7;
-    float imgheight = imgwidth * ((float)image_height / image_width);
+    float imgheight = imgwidth * ((float)image.height / image.width);
     float windowHeight = imgheight + 40;
     float windowWidth = imgwidth + 40;
     static const ImVec4 transparent{1.0f, 1.0f, 1.0f, 0.0f};
@@ -272,7 +264,7 @@ void showDiagram() {
         ImVec2(polyscope::view::windowWidth - windowWidth, polyscope::view::windowHeight - windowHeight));
     ImGui::SetNextWindowSize(ImVec2(windowWidth, windowHeight));
     if (ImGui::Begin("Diagram")) {
-        ImGui::Image((void*)(intptr_t)image_texture, ImVec2(imgwidth, imgheight));
+        ImGui::Image((void*)(intptr_t)image.texture, ImVec2(imgwidth, imgheight));
     }
     ImGui::End();
     ImGui::PopStyleColor(6);
