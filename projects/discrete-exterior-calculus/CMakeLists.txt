@@ -91,6 +91,10 @@ target_include_directories(main PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include/")
 target_include_directories(main PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/../../utils/include")
 # add the args.hxx project which we use for command line args
 target_include_directories(main PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/../../deps/polyscope/deps/args")
+# I don't really know why, but after the most recent updates to my Polyscope fork, I have to explicitly bring stb, glad into scope.
+target_include_directories(main PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/../../deps/polyscope/deps/stb")
+target_include_directories(main PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/../../deps/polyscope/deps/glad/include")
+target_include_directories(main PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/../../deps/polyscope/deps/glfw/include")
 target_link_libraries(main geometry-central polyscope)
 
 add_executable(test-dec "${TEST_SRCS}")
