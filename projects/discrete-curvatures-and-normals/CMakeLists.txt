@@ -88,6 +88,8 @@ add_executable(main "${SRCS}")
 set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT main)
 target_include_directories(main PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include/")
 target_include_directories(main PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/../../utils/include")
+# add the args.hxx project which we use for command line args
+target_include_directories(main PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/../../deps/polyscope/deps/args")
 target_link_libraries(main geometry-central polyscope)
 
 add_executable(test-curv "${TEST_SRCS}")
