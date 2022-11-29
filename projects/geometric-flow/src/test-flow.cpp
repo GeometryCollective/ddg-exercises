@@ -113,6 +113,58 @@ class ModifiedMeanCurvatureFlowTest : public MeanCurvatureFlowTest {
     // mesh, geometry already deleted in MCF
 };
 
+// Some sanity checks for the Laplace matrix (same as from poisson-problem)
+TEST_F(MeanCurvatureFlowTest, laplaceMatrixSymmetric) {
+    bool success = true;
+    double eps = 1e-5;
+    SparseMatrix<double> A = MCF.geometry->laplaceMatrix();
+    size_t V = A.rows();
+    for (size_t i = 0; i < V; i++) {
+        for (SparseMatrix<double>::InnerIterator it(A, i); it; ++it) {
+            if (abs(it.value() - A.coeffRef(it.col(), it.row())) > eps) {
+                success = false;
+                break;
+            }
+        }
+    }
+    EXPECT_TRUE(success) << "Laplace matrix is not symmetric";
+}
+
+TEST_F(MeanCurvatureFlowTest, laplaceMatrixRowSums) {
+    bool success = true;
+    double eps = 1e-5;
+    SparseMatrix<double> A = MCF.geometry->laplaceMatrix(); // A should equal A^T
+    size_t V = A.rows();
+    for (size_t i = 0; i < V; i++) {
+        double rowSum = 0.;
+        for (SparseMatrix<double>::InnerIterator it(A, i); it; ++it) {
+            rowSum += it.value();
+        }
+        if (abs(rowSum) > eps) success = false;
+    }
+    EXPECT_TRUE(success) << "Each row of Laplace matrix does not sum to zero";
+}
+TEST_F(MeanCurvatureFlowTest, laplaceMatrixDiagonalSums) {
+    bool success = true;
+    double eps = 1e-5;
+    SparseMatrix<double> A = MCF.geometry->laplaceMatrix(); // A should equal A^T
+    size_t V = A.rows();
+    for (size_t i = 0; i < V; i++) {
+        double diag = 0.;
+        double sum = 0.;
+        for (SparseMatrix<double>::InnerIterator it(A, i); it; ++it) {
+            if (it.row() != it.col()) {
+                sum += it.value();
+            } else {
+                diag = it.value();
+            }
+        }
+        if (abs(diag + sum) > eps) success = false;
+    }
+    EXPECT_TRUE(success)
+        << "Off-diagonal entries of Laplace matrix do not sum to (negative) the diagonal entry in each row";
+}
+
 TEST_F(MeanCurvatureFlowTest, integrate) {
 
     for (int i = 0; i < steps; i++) {
