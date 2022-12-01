@@ -156,8 +156,8 @@ TEST_F(HarmonicBasesTest, compute) {
     std::vector<Vector<double>> bases = HB.compute(treeCotree.generators, HD);
     int N = bases.size();
     Eigen::MatrixXd M(bases[0].size(), N);
-    for (int i = 0; i < N; i++) {
-        M << bases[i];
+    for (int i = 0; i < (int)bases.size(); i++) {
+        M.col(i) = bases[i];
     }
     Eigen::JacobiSVD<Eigen::MatrixXd> svd(M);
     EXPECT_TRUE(svd.rank() == N) << "Bases are not linearly independent";
