@@ -157,7 +157,7 @@ TEST_F(HarmonicBasesTest, compute) {
     int N = bases.size();
     Eigen::MatrixXd M(bases[0].size(), N);
     for (int i = 0; i < N; i++) {
-        M << bases[i];
+        M.col(i) = bases[i];
     }
     Eigen::JacobiSVD<Eigen::MatrixXd> svd(M);
     EXPECT_TRUE(svd.rank() == N) << "Bases are not linearly independent";
