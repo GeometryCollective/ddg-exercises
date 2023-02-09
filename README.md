@@ -30,16 +30,6 @@ This builds an executable `main` which can then be run using
 ```
 bin/main <optional_path_to_a_mesh>
 ```
-
-### "Release" vs "Debug" mode
-By default, the projects will compile in "Release" mode. While implementing these exercises, you may find it helpful to compile in "Debug" mode, which will enable more sanity checks in the code and print out more descriptive error messages, at the cost of somewhat less efficient performance. You can compile in Debug mode by using
-```
-cmake -DCMAKE_BUILD_TYPE=Debug ..
-```
-You can explicitly tell CMake to compile in Release mode by using 
-```
-cmake -DCMAKE_BUILD_TYPE=Release ..
-```
 2. If you would like to add your own remote repository, 
 ```
 git remote add origin <url_of_remote_repository>
@@ -52,6 +42,15 @@ Then you should be able to push your commits to your remote repo. (For more exte
 
 **Please make your repo(s) private** to protect academic integrity! As mentioned by the course grading policy, "Duplicate work turned in by two different students will be considered cheating by _both_ students" -- meaning if another student copies your code off your public repo, you will _both_ get zeros for the course :((.
 
+### "Release" vs "Debug" mode
+By default, the projects will compile in "Release" mode. While implementing these exercises, you may find it helpful to compile in "Debug" mode, which will enable more sanity checks in the code and print out more descriptive error messages, at the cost of somewhat less efficient performance. You can compile in Debug mode by using
+```
+cmake -DCMAKE_BUILD_TYPE=Debug ..
+```
+You can explicitly tell CMake to compile in Release mode by using 
+```
+cmake -DCMAKE_BUILD_TYPE=Release ..
+```
 
 ## Dependencies (all included)
 
