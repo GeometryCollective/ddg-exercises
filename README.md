@@ -31,7 +31,7 @@ This builds an executable `main` which can then be run using
 bin/main <optional_path_to_a_mesh>
 ```
 
-## "Release" vs "Debug" mode
+### "Release" vs "Debug" mode
 By default, the projects will compile in "Release" mode. While implementing these exercises, you may find it helpful to compile in "Debug" mode, which will enable more sanity checks in the code and print out more descriptive error messages, at the cost of somewhat less efficient performance. You can compile in Debug mode by using
 ```
 cmake -DCMAKE_BUILD_TYPE=Debug ..
