@@ -31,8 +31,15 @@ This builds an executable `main` which can then be run using
 bin/main <optional_path_to_a_mesh>
 ```
 
-(See [Geometry Central: Building](https://geometry-central.net/build/building/) for additional compiler flag options.
-
+## "Release" vs "Debug" mode
+By default, the projects will compile in "Release" mode. While implementing these exercises, you may find it helpful to compile in "Debug" mode, which will enable more sanity checks in the code and print out more descriptive error messages, at the cost of somewhat less efficient performance. You can compile in Debug mode by using
+```
+cmake -DCMAKE_BUILD_TYPE=Debug ..
+```
+You can explicitly tell CMake to compile in Release mode by using 
+```
+cmake -DCMAKE_BUILD_TYPE=Release ..
+```
 2. If you would like to add your own remote repository, 
 ```
 git remote add origin <url_of_remote_repository>
